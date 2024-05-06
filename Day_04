@@ -1,0 +1,283 @@
+Day 04:
+
+Do the below programs in anonymous function & IIFE
+a. Print odd numbers in an array
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
+//anonymous function
+b = function() {
+let c = [];
+for (let i = 0; i < a.length; i++) {
+if (a[i] % 2 != 0) {
+c.push(a[i]);
+}
+}
+console.log(c);
+};
+b();
+//IIFE Function
+(function() {
+let c = [];
+for (let i = 0; i < a.length; i++) {
+if (a[i] % 2 != 0) {
+c.push(a[i]);
+}
+}
+console.log(c);
+})();
+
+
+b. Convert all the strings to title caps in a string array
+//anonymous function
+b = function(str) {
+var sentence = str.toLowerCase().split(“ “);
+for (let i = 0; i < sentence.length; i++) {
+sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+}
+console.log(sentence.join(“ “));
+return sentence;
+}
+b(“java script is the best”);
+//IIFE function
+(function(str) {
+var sentence = str.toLowerCase().split(“ “);
+for (let i = 0; i < sentence.length; i++) {
+sentence[i] = sentence[i][0].toUpperCase() + sentence[i].slice(1);
+}
+console.log(sentence.join(“ “));
+return sentence;
+})(“java script is the best”);
+
+
+c. Sum of all numbers in an array
+//Anonymous Function
+a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17];
+b = function() {
+let sum = 0;
+for (let i = 0; i < a.length; i++) {
+sum = sum + a[i];
+}
+return sum;
+}
+console.log(b());
+
+//IIFE function
+(function() {
+let sum = 0;
+for (let i = 0; i < a.length; i++) {
+sum = sum + a[i];
+}
+console.log(sum);
+})();
+
+
+d. Return all the prime numbers in an array
+let a = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21];
+//anonymous function
+b = function(…a) {
+for (let i = 0; i < a.length; i++) {
+for (let j = 2; j <= a[i] — 1; j++) {
+if (a[i] % j == 0) {
+return false;
+}
+}
+return a[i] > 1;
+}
+};
+console.log(a.filter(b));
+
+//IIFE Function
+(prime = function(a) {
+for (let j = 2; j <= a — 1; j++) {
+if (a % j == 0) {
+return false;
+}
+}
+return a > 1;
+})();
+console.log(a.filter(prime))
+
+
+e. Return all the palindromes in an array
+let arr = [‘aha’, ‘raghu’, ‘gaag’, ‘hello’, ‘jooj’, ‘kook’];
+//anonymous function
+let palin = function(arr) {
+let c = [];
+for (let i = 0; i < arr.length; i++) {
+let strarr = arr[i]
+let revstr = strarr.split(‘’).reverse().join(‘’);
+if (strarr == revstr) {
+c.push(strarr);
+}
+}
+console.log(c);
+}
+palin(arr);
+
+//IIFE function
+(function(arr) {
+let c = [];
+for (let i = 0; i < arr.length; i++) {
+let strarr = arr[i]
+let revstr = strarr.split(‘’).reverse().join(‘’);
+if (strarr == revstr) {
+c.push(strarr);
+}
+}
+console.log(c);
+})(arr);
+
+f. Return median of two sorted arrays of same size
+let arr1 = [45, 56, 23, 78, 89, 57, 70];
+let arr2 = [23, 56, 78, 90, 80, 32, 67];
+//anonymous function
+let med = function(arr1, arr2) {
+let l = arr1.length;
+arr1.sort(function(a, b) { return a — b });
+arr2.sort(function(a, b) { return a — b });
+console.log(arr1, arr2);
+if (arr1.length % 2 === 0) {
+console.log((arr1[l / 2] + arr1[l / 2–1]) / 2)
+console.log((arr2[l / 2] + arr2[l / 2–1]) / 2)
+}
+else {
+console.log((arr1[(l — 1) / 2]))
+console.log((arr2[(l — 1) / 2]))
+}
+};
+med(arr1, arr2);
+
+//IIFE function
+(function(arr1, arr2) {
+let l = arr1.length;
+arr1.sort(function(a, b) { return a — b });
+arr2.sort(function(a, b) { return a — b });
+console.log(arr1, arr2);
+if (arr1.length % 2 === 0) {
+console.log((arr1[l / 2] + arr1[l / 2–1]) / 2)
+console.log((arr2[l / 2] + arr2[l / 2–1]) / 2)
+}
+else {
+console.log((arr1[(l — 1) / 2]))
+console.log((arr2[(l — 1) / 2]))
+}
+})(arr1, arr2);
+
+g. Remove duplicates from an array
+let arr = [1, 2, 2, 2, 4, 6, 6, 6, 7, 7, 8, 8, 8, 8, 8, 9, 22, 4, 4, 567, 67, 78, 78, 45, 67, 45, 45, 45, 78, 67, 56, 54];
+//anonymous function
+let dup = function(arr) {
+let newarr = […new Set(arr)];
+console.log(newarr);
+}
+dup(arr);
+//IIFE function
+(function(arr) {
+let newarr = […new Set(arr)];
+console.log(newarr);
+})(arr)
+
+h. Rotate an array by k times
+let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+let k = 3;
+//anonymous function
+let rot = function(arr) {
+for (let i = 0; i < k; i++) {
+arr.unshift(arr.pop());
+}
+console.log(arr);
+}
+rot(arr);
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+//IIFE function
+(function(arr) {
+for (let i = 0; i < k; i++) {
+arr.unshift(arr.pop());
+}
+console.log(arr);
+})(arr);
+====================================================================================================
+
+Arrow Function :
+A.Print odd numbers in an array
+var y=[1,2,3,4,5,6,7]
+
+var odd=(array)=>{
+   let arr=[];
+   for(let i=0; i<array.length; i++)
+   {
+     if(array[i]%2!==0)
+     {
+      arr.push(array[i]);
+     }
+   }
+   return arr;
+}
+console.log(odd(y));
+
+B.Convert all the strings to title caps in a string array
+USING ARROW FUNCTION:
+var str="Welcome to JS";
+let def= (str)=>{
+   str = str.toLowerCase().split(' ');
+   for (var i = 0; i < str.length; i++) {
+     str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+   } 
+   return str.join(' ');
+}
+console.log(def(str));
+
+c.Sum of all numbers in an array
+BY USING ARROW FUNCTION:
+var a=[1,2,3,4,5,6,7,8,9];
+var sum=0;
+let ghi=(a)=>
+{
+   for(let i=0; i<a.length; i++)
+   {
+     sum=sum+a[i];
+   }
+   return sum;
+}
+console.log(ghi(a));
+
+D.Return all the prime numbers in an array
+BY USING ARROW FUNCTION:
+let n=34;
+let l=(n)=>
+{
+   for(let i=2; i<=n; i++)
+   {
+      let flag=0;
+      for(let j=2; j<i; j++)
+      {
+         if(i%j==0)
+         {
+            flag=1;
+            break;
+         }
+      }
+      if(flag==0)
+      {
+         console.log(i);
+      }
+   }
+}
+console.log(l(n));
+
+E.Return all the palindromes in an array
+BY USING ARROW FUNCTION:
+Palindrome = (arr, n) =>
+    {
+        // Traversing each element of the array
+        // and check if it is palindrome or not
+        for (let i = 0; i < n; i++)
+        {
+            let ans = isPalindrome(arr[i]);
+            if (ans == false)
+                return false;
+        }
+        return true;
+    }
+
+
+    
