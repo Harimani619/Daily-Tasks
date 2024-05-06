@@ -1,5 +1,4 @@
-//QUESTIN 1:
-//COMPARE TWO JSON HAVE THE SAME PROPERTIES WITHOUT ORDER
+1. COMPARE TWO JSON HAVE THE SAME PROPERTIES WITHOUT ORDER
 let obj1={
     name:"person1",
     age : 5
@@ -17,8 +16,8 @@ const samepropertyobjs=function(obj1,obj2)
     };
     return false;
 };
-QUESTIOM 2
-GIVEN API AND DISPLAY ALL THE COUNTRIES FLAGS
+
+2. GIVEN API AND DISPLAY ALL THE COUNTRIES FLAGS
 
 let request= new XMLHttpRequest()
 let method ='GET'
@@ -36,8 +35,7 @@ request.onload= function(){
 }
 
 
-QUESTION 3:
-USE SAME RESTCOUNTRIES AND PRINT NAMES,SUB-REGION,POPULATION,REGIONS
+3. USE SAME RESTCOUNTRIES AND PRINT NAMES,SUB-REGION,POPULATION,REGIONS
 
 let request1= new XMLHttpRequest()
 let method1='GET'
